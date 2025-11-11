@@ -38,8 +38,89 @@
 Varför renovera dina slutväxlar och planetväxlar när en ny är billigare? Det är säkert billigare att byta till en nytt slutväxel eller planetväxel i det långa loppet, och väldigt ofta på kort sikt! Kvaliteten på slutväxlarna och planetväxlarna är trots de låga priserna höga. Vi gör delarna till våra slutväxlar och planetväxlar samt distribuerar dem direkt. Det ger dig en ny slutväxel och planetväxel till bästa pris och högsta kvalitet. Nya kunder uppger att de använde ofta renoverade slutväxlar och planetväxlar. Men det är helt enkelt inte lönsamt med våra låga priser.
 Därför att köper i stort sett alla våra kunder en ny slutväxel eller planetväxel när den gamla ger upp. Vi kan serva och konfigurera slutväxlar och planetväxlar för att möta dina krav. Vi kan hjälpa till om du behöver en utbytes eller service på din slutväxel eller planetväxel från växellådorna till populära märken som Bonfiglioli, Brevini, Kayaba, Nachi, Oil Motor, Orbit/Eaton, Sumitomo, SOM, Tong Myung, Teijin Seiki eller Nabtesco.
 Har du specifika applikationer som behöver en planetväxel eller en slutväxel kan vi fixa det också. Vi har en egen konstruktionsavdelning med lång erfarenhet i branschen. Tillverkningen sker på plats med några av de allra bästa maskinerna på marknaden. Operatörerna är välutbildade och har lång erfarenhet av tillverkning.</article>
-        <article class="bildspel"></article>
+        <article class="bildspel">
+            <div class="slideshow-container">
+
+                <div class="slide fade">
+                    <img src="ollesABbild1.jpg" alt="Bild 1">
+                </div>
+
+                <div class="slide fade">
+                    <img src="ollesABbild2.jpg" alt="Bild 2">
+                </div>
+
+                <div class="slide fade">
+                    <img src="ollesABbild3.jpg" alt="Bild 3">
+                </div>
+
+                <div class="slide fade">
+                    <img src="ollesABbild4.jpg" alt="Bild 4">
+                </div>
+
+                <div class="slide fade">
+                    <img src="ollesABbild5.jpg" alt="Bild 5">
+                </div>
+
+                <div class="slide fade">
+                    <img src="ollesABbild6.jpg" alt="Bild 6">
+                </div>
+
+                <div class="slide fade">
+                    <img src="ollesABbild7.jpg" alt="Bild 7">
+                </div>
+                
+
+                <a class="prev" onclick="changeSlide(-1)">❮</a>
+                <a class="next" onclick="changeSlide(1)">❯</a>
+            </div>
+
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+            </div>
+</article>
+
     </main>
     <footer>&copy;Måns Jansson</footer>
+
+    <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function changeSlide(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].classList.add("active");
+}
+
+setInterval(() => {
+  changeSlide(1);
+}, 7500);
+</script>
 </body>
 </html>
